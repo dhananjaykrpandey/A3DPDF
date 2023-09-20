@@ -1,0 +1,98 @@
+﻿
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>A3DPDF</RootNamespace>
+    <EnableDefaultItems>False</EnableDefaultItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Telerik.UI.for.Wpf.70.Xaml" Version="2023.1.117" />
+  </ItemGroup>
+  
+  <ItemGroup>
+  <ApplicationDefinition Include="App.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    <SubType>Designer</SubType>
+  </ApplicationDefinition>
+  <Page Include="Shared\UI\MainWindow.xaml">
+    <Generator>MSBuild:Compile</Generator>
+    <SubType>Designer</SubType>
+  </Page>
+  <Page Include="Shared\UI\UcAbout.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="Shared\UI\WinAboutUs.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="UI\Create\UcCreateFromFile.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="UI\Create\UcCreateFromText.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="UI\PDFWork\UcMerge.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="UI\PDFWork\UcRotate.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Page Include="UI\PDFWork\UcSplit.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </Page>
+  <Compile Include="App.xaml.cs">
+    <DependentUpon>App.xaml</DependentUpon>
+    <SubType>Code</SubType>
+  </Compile>
+  <Compile Include="GlobalUsing.cs" />
+  <Compile Include="Shared\UI\MainWindow.xaml.cs">
+    <DependentUpon>MainWindow.xaml</DependentUpon>
+    <SubType>Code</SubType>
+  </Compile>
+  <Compile Include="Shared\UI\UcAbout.xaml.cs" />
+  <Compile Include="Shared\UI\WinAboutUs.xaml.cs" />
+  <Compile Include="UI\Create\UcCreateFromFile.xaml.cs" />
+  <Compile Include="UI\Create\UcCreateFromText.xaml.cs" />
+  <Compile Include="UI\PDFWork\UcMerge.xaml.cs" />
+  <Compile Include="UI\PDFWork\UcRotate.xaml.cs" />
+  <Compile Include="UI\PDFWork\UcSplit.xaml.cs" />
+</ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\Image\A3D.ico" />
+    <EmbeddedResource Include="Shared\Image\A3D128.png" />
+    <EmbeddedResource Include="Shared\Image\A3D2.PNG" />
+    <EmbeddedResource Include="Shared\Image\A3D24X24.png" />
+    <EmbeddedResource Include="Shared\Image\A3D256.png" />
+    <EmbeddedResource Include="Shared\Image\A3D40X45.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="A3DFontAwesome">
+      <HintPath>..\..\A3DFontAwesomeProject\A3DFontAwesome\A3DFontAwesome\bin\Debug\net6.0-windows\A3DFontAwesome.dll</HintPath>
+    </Reference>
+    <Reference Include="A3DFontAwesome.Material">
+      <HintPath>..\..\A3DFontAwesomeProject\A3DFontAwesome\A3DFontAwesome.Material\bin\Debug\net6.0-windows\A3DFontAwesome.Material.dll</HintPath>
+    </Reference>
+    <Reference Include="A3DIcons.ionicons">
+      <HintPath>..\..\A3DFontAwesomeProject\A3DFontAwesome\A3DIcons.ionicons\bin\Debug\net6.0-windows\A3DIcons.ionicons.dll</HintPath>
+    </Reference>
+    <Reference Include="A3DIcons.RemixIcons">
+      <HintPath>..\..\A3DFontAwesomeProject\A3DFontAwesome\A3DIcons.RemixIcons\bin\Debug\net6.0-windows\A3DIcons.RemixIcons.dll</HintPath>
+    </Reference>
+    <Reference Include="A3DIcons.ThemifyIcons">
+      <HintPath>..\..\A3DFontAwesomeProject\A3DFontAwesome\A3DIcons.ThemifyIcons\bin\Debug\net6.0-windows\A3DIcons.ThemifyIcons.dll</HintPath>
+    </Reference>
+    <Reference Include="A3DWPFUtility">
+      <HintPath>..\..\A3DWPFUtility\bin\Debug\net7.0-windows\A3DWPFUtility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Shared\Classes\" />
+  </ItemGroup>
+
+</Project>

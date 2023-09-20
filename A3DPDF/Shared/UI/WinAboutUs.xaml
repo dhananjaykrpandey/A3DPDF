@@ -1,0 +1,80 @@
+﻿<Window x:Class="A3DPDF.Shared.UI.WinAboutUs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A3DPDF.Shared.UI"
+        mc:Ignorable="d"
+              xmlns:fx="clr-namespace:A3DFontAwesome;assembly=A3DFontAwesome" 
+                xmlns:Rx="clr-namespace:A3DIcons.RemixIcons;assembly=A3DIcons.RemixIcons"
+                xmlns:Mx="clr-namespace:A3DFontAwesome.Material;assembly=A3DFontAwesome.Material"
+         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                  Width="500" Height="400" MaxWidth="500" MaxHeight="400" 
+        ShowInTaskbar="True" WindowStyle="ToolWindow" 
+        Loaded="Window_Loaded" Background="#ffff" Title="A3D PDF" Icon="{Rx:IconSource FilePdfFill, Foreground='#E3008C'}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"  HorizontalAlignment="Center"  >
+
+            <StackPanel Orientation="Vertical">
+                <Rx:IconImage Icon="FilePdfFill" Foreground="#08E991" Width="30" Height="30" Margin="5,0,5,0" />
+                <TextBlock Text="A3D PDF" VerticalAlignment="Center" Foreground="Black" HorizontalAlignment="Center" Margin="5,0,5,0"/>
+            </StackPanel>
+
+        </Label>
+        <Label Grid.Row="1"  HorizontalAlignment="Left"  >
+            <StackPanel Orientation="Horizontal">
+                <Rx:IconImage Icon="FilePdfFill" Foreground="#08E991" Width="30" Height="30" Margin="5,0,5,0" />
+                <TextBlock Text="A3D PDF- PDF utility to perform various pdf file taks" VerticalAlignment="Center" Margin="5,0,5,0"/>
+            </StackPanel>
+        </Label>
+        <Label Grid.Row="3"  HorizontalAlignment="Left"  >
+            <StackPanel Orientation="Horizontal">
+                <Mx:IconImage Icon="Copyright" Foreground="#08E991" Width="30" Height="30" Margin="5,0,5,0" />
+                <TextBlock VerticalAlignment="Center" Margin="5,0,5,0">2022 - 2023</TextBlock>
+                <TextBlock  VerticalAlignment="Center" Margin="5,0,5,0">
+                     <Hyperlink NavigateUri="http://www.arnikainfotech.com" RequestNavigate="Hyperlink_RequestNavigate">
+         Arnika Technologies
+    </Hyperlink>
+                </TextBlock>
+                <TextBlock VerticalAlignment="Center" Margin="5,0,5,0" Text=" and its subsidiaries. All rights reserved."></TextBlock>
+            </StackPanel>
+        </Label>
+        <Label Grid.Row="4"  HorizontalAlignment="Left"   >
+            <StackPanel Orientation="Horizontal">
+                <Rx:IconImage Icon="MailLine" Foreground="#08E991" Width="30" Height="30" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                <TextBlock VerticalAlignment="Center" Margin="5,0,5,0">E-Mail for Support/Help</TextBlock>
+                <TextBlock  VerticalAlignment="Center" Margin="5,0,5,0">
+                 <Hyperlink NavigateUri="mailto:info@arnikainfotech.com" x:Name="lnkSendMail" RequestNavigate="lnkSendMail_RequestNavigate">
+     info@arnikainfotech.com
+</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Label>
+
+        <Label Grid.Row="5"  HorizontalAlignment="Left"   >
+            <StackPanel Orientation="Horizontal">
+                <fx:IconImage Icon="Warning" Foreground="#D05E38" Width="30" Height="30" Margin="5,0,5,0" />
+                <TextBlock TextWrapping="Wrap" Text="This computer perogram is protected by Copyright law.
+                               Unauthrorized distribution of this program or any prortion hereof may result in leagal action." HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               Margin="5,10,5,0"  Width="438"/>
+            </StackPanel>
+        </Label>
+
+        <telerik:RadButton Grid.Row="6" HorizontalAlignment="Left" Margin="380,5,10,7" Width="100" Background="#3FCA91" Click="RadButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Rx:IconImage  Width="30" Height="18" HorizontalAlignment="Left"  Foreground="White"  Icon="CheckboxCircleLine" />
+                <TextBlock Text="Ok" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" ></TextBlock>
+            </StackPanel>
+        </telerik:RadButton>
+    </Grid>
+</Window>
