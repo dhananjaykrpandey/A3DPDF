@@ -16,5 +16,22 @@
         {
 
         }
+
+        private void RdCmbMergeType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                RadComboBoxItem _radComboBoxItem=e.AddedItems[0] as RadComboBoxItem;
+                if (_radComboBoxItem!=null)
+                {
+                    RdCmbMergeType.ToolTip=_radComboBoxItem.ToolTip;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                ClsMessage._IClsMessage.ShowError(ex, this);
+            }
+        }
     }
 }

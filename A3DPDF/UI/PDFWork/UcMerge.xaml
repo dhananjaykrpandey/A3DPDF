@@ -6,8 +6,10 @@
              xmlns:local="clr-namespace:A3DPDF.UI.PDFWork"
              mc:Ignorable="d" 
              xmlns:fx="clr-namespace:A3DFontAwesome;assembly=A3DFontAwesome" 
-        xmlns:Rx="clr-namespace:A3DIcons.RemixIcons;assembly=A3DIcons.RemixIcons"
-        xmlns:Mx="clr-namespace:A3DFontAwesome.Material;assembly=A3DFontAwesome.Material"
+             xmlns:Rx="clr-namespace:A3DIcons.RemixIcons;assembly=A3DIcons.RemixIcons"
+             xmlns:Mx="clr-namespace:A3DFontAwesome.Material;assembly=A3DFontAwesome.Material"
+             xmlns:helpers="clr-namespace:Telerik.Windows.Controls.Theming.Helpers;assembly=Telerik.Windows.Controls"
+              
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,75 +17,146 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" BorderThickness="1" BorderBrush="Aquamarine" Margin="5">
-        <Grid Grid.Column="0" Margin="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="130"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="230"/>
-                </Grid.ColumnDefinitions>
-                <telerik:Label Margin="10,10,0,10">Select File</telerik:Label>
-                <telerik:RadWatermarkTextBox Grid.Column="1" Margin="10,10,0,10" IsReadOnly="True" IsEnabled="True" DisabledBackground="White" >
+            <Grid Grid.Column="0" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="230"/>
+                    </Grid.ColumnDefinitions>
+                    <telerik:Label Margin="10,10,0,10">Select File</telerik:Label>
+                    <telerik:RadWatermarkTextBox Grid.Column="1" Margin="10,10,0,10" IsReadOnly="True" IsEnabled="True" DisabledBackground="White" >
 
-                    <telerik:RadWatermarkTextBox.WatermarkContent>
-                        <StackPanel Orientation="Horizontal">
-                            <fx:IconImage Icon="FilePdf" Foreground="#3FCA91" Width="20" Height="20" Margin="5,0,5,0" />
-                            <TextBlock TextWrapping="Wrap" Text="Select File  (Pdf,Doc,Image)..." HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        <telerik:RadWatermarkTextBox.WatermarkContent>
+                            <StackPanel Orientation="Horizontal">
+                                <fx:IconImage Icon="FilePdf" Foreground="#3FCA91" Width="20" Height="20" Margin="5,0,5,0" />
+                                <TextBlock TextWrapping="Wrap" Text="Select File  (Pdf,Doc,Image)..." HorizontalAlignment="Center" VerticalAlignment="Center" 
                     Margin="5,5,5,0"  Width="438"/>
-                        </StackPanel>
-                    </telerik:RadWatermarkTextBox.WatermarkContent>
-                   
-                </telerik:RadWatermarkTextBox>
-                <telerik:RadButton Grid.Column="2" HorizontalAlignment="Stretch" Margin="5"  Background="#3FCA91" x:Name="RdBtnSelectfile" Click="RdBtnSelectfile_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Rx:IconImage  Width="30" Height="18" HorizontalAlignment="Left"  Foreground="White"  Icon="FolderOpenLine" />
-                        <TextBlock Text="Select file (Pdf,Doc,Image)" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" ></TextBlock>
-                    </StackPanel>
-                </telerik:RadButton>
-            </Grid>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="130"/>
-                    <ColumnDefinition Width="180"/>
-                    <ColumnDefinition Width="230"/>
-                </Grid.ColumnDefinitions>
-                <telerik:Label Margin="10,10,0,10">Enter File Sequence</telerik:Label>
-                <telerik:RadWatermarkTextBox Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,10" IsReadOnly="False" IsEnabled="True" DisabledBackground="White" >
+                            </StackPanel>
+                        </telerik:RadWatermarkTextBox.WatermarkContent>
 
-                    <telerik:RadWatermarkTextBox.WatermarkContent>
+                    </telerik:RadWatermarkTextBox>
+                    <telerik:RadButton Grid.Column="2" HorizontalAlignment="Stretch" Margin="5,10,10,10"  Background="#3FCA91" x:Name="RdBtnSelectfile" Click="RdBtnSelectfile_Click">
                         <StackPanel Orientation="Horizontal">
-                            <fx:IconImage Icon="SortNumericAsc" Foreground="#711EDD" Width="20" Height="20" Margin="5,0,5,0" />
-                            <TextBlock TextWrapping="Wrap" Text="Enter File Sequence" HorizontalAlignment="Center" VerticalAlignment="Center" 
-        Margin="5"  Width="438"/>
+                            <Rx:IconImage  Width="30" Height="18" HorizontalAlignment="Left"  Foreground="White"  Icon="FolderOpenLine" />
+                            <TextBlock Text="Select file (Pdf,Doc,Image)" HorizontalAlignment="Center" VerticalAlignment="Center"  Foreground="White" ></TextBlock>
                         </StackPanel>
-                    </telerik:RadWatermarkTextBox.WatermarkContent>
+                    </telerik:RadButton>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="230"/>
+                    </Grid.ColumnDefinitions>
+                    <telerik:Label Margin="10,10,0,10">Enter File Sequence</telerik:Label>
+                    <telerik:RadWatermarkTextBox Grid.Column="1" HorizontalAlignment="Stretch" Margin="10,10,0,10" IsReadOnly="False" IsEnabled="True" DisabledBackground="White" >
 
-                </telerik:RadWatermarkTextBox>
-          
-            </Grid>
-            <Grid Grid.Row="2">
+                        <telerik:RadWatermarkTextBox.WatermarkContent>
+                            <StackPanel Orientation="Horizontal">
+                                <fx:IconImage Icon="SortNumericAsc" Foreground="#711EDD" Width="20" Height="20" Margin="5,0,5,0" />
+                                <TextBlock TextWrapping="Wrap" Text="Enter File Sequence" HorizontalAlignment="Center" VerticalAlignment="Center" 
+        Margin="5"  Width="438"/>
+                            </StackPanel>
+                        </telerik:RadWatermarkTextBox.WatermarkContent>
 
-                <telerik:RadButton  HorizontalAlignment="Stretch" ToolTip="Add file for merger"  Margin="10"  Background="#E53FB9" x:Name="RdBtnAddfile" Click="RdBtnSelectfile_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Rx:IconImage  Width="30" Height="18" HorizontalAlignment="Left"  Foreground="White"  Icon="FileAddLine" />
-                        <TextBlock Text="Add file" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" ></TextBlock>
-                    </StackPanel>
-                </telerik:RadButton>
-
-            </Grid>
-                <Grid Grid.Row="3">
-
-                    <telerik:RadGridView  HorizontalAlignment="Stretch"  Margin="10"   x:Name="RdGrdFiles" >
-                        
-                    </telerik:RadGridView>
+                    </telerik:RadWatermarkTextBox>
 
                 </Grid>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="*"/>
+                        
+                    </Grid.ColumnDefinitions>
+                    <telerik:Label Margin="10,10,0,10">Merge Type</telerik:Label>
+                    <telerik:RadComboBox  Grid.Column="1" x:Name="RdCmbMergeType" SelectionChanged="RdCmbMergeType_SelectionChanged" Margin="10,10,10,10"  IsEditable="True"   EmptyText="Select pdf merge type" >
+                        <telerik:RadComboBoxItem Content="Normal Merge " ToolTip="Merge all file in one after one, As added in grid" />
+                        <telerik:RadComboBoxItem Content="Specific Order"  ToolTip="Merge all file in specific order, As mension in grid"/>
+                        <telerik:RadComboBoxItem Content="Split And Merge"  ToolTip="Select page range and merge"/>
+                        <telerik:RadComboBoxItem Content="Split And Specific Page Wise" ToolTip="Select specific page and merge according to user order"/>
+                    </telerik:RadComboBox>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <telerik:RadButton Grid.Column="0"  helpers:ThemeHelper.MouseOverBrush="DarkOrange" HorizontalAlignment="Stretch" ToolTip="Add file for merger"  Margin="10"  Background="#D40152" x:Name="RdBtnAddfile" Click="RdBtnSelectfile_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Rx:IconImage  Width="30" Height="18" HorizontalAlignment="Left"  Foreground="White"  Icon="FileAddLine" />
+                            <TextBlock Text="Add file" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" ></TextBlock>
+                        </StackPanel>
+                    </telerik:RadButton>
+                    <telerik:RadButton Grid.Column="1"  helpers:ThemeHelper.MouseOverBrush="DarkOrange" HorizontalAlignment="Stretch" ToolTip="Preview file"  Margin="10"  Background="#2779F3" x:Name="RdBtnPreview" Click="RdBtnSelectfile_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Rx:IconImage  Width="30" Height="18" HorizontalAlignment="Left"  Foreground="White"  Icon="EyeLine" />
+                            <TextBlock Text="Preview file" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" ></TextBlock>
+                        </StackPanel>
+                    </telerik:RadButton>
+                    <telerik:RadButton Grid.Column="2"  helpers:ThemeHelper.MouseOverBrush="DarkOrange" HorizontalAlignment="Stretch" ToolTip="Save changes"  Margin="10"  Background="#049864" x:Name="RdBtnSave" Click="RdBtnSelectfile_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <Rx:IconImage  Width="30" Height="18" HorizontalAlignment="Left"  Foreground="White"  Icon="Save2Line" />
+                            <TextBlock Text="Save" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" ></TextBlock>
+                        </StackPanel>
+                    </telerik:RadButton>
+                </Grid>
+                <telerik:RadDocking x:Name="radDocking" Grid.Row="4" HasDocumentHost="False" >
+                    <telerik:RadSplitContainer x:Name="radSplitContainer" Orientation="Vertical"  ><!--telerik:DockingPanel.InitialSize="600,600"-->
+                        <telerik:RadPaneGroup >
+                            <telerik:RadPane Header="Files"  CanFloat="False" CanUserClose="False" CanUserPin="False" IsDockable="False" ContextMenuTemplate="{x:Null}">
+                                <telerik:RadGridView  HorizontalAlignment="Stretch"  Margin="10"   x:Name="RdGrdFiles" >
+
+                                </telerik:RadGridView>
+
+                            </telerik:RadPane>
+                        </telerik:RadPaneGroup>
+                        <telerik:RadPaneGroup>
+                            <telerik:RadPane Header="File Page Details" CanFloat="False" CanUserClose="False" CanUserPin="False" IsDockable="False" ContextMenuTemplate="{x:Null}">
+                                <telerik:RadGridView  HorizontalAlignment="Stretch"  Margin="10"   x:Name="RdGrdFilePageDetails">
+
+                                </telerik:RadGridView>
+                            </telerik:RadPane>
+                        </telerik:RadPaneGroup>
+                      
+                    </telerik:RadSplitContainer>
+                </telerik:RadDocking>
+                <!--<telerik:RadDocking x:Name="radDocking1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   Grid.Row="4"                          
+                             Margin="0 0 0 10"  BorderThickness="0" Padding="0">
+                    <telerik:RadSplitContainer  x:Name="TopContainer"  InitialPosition="DockedTop" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                            <telerik:RadPaneGroup x:Name="Group3" >
+
+                                
+                                <telerik:RadPane x:Name="Pane5" Header="File">
+        
+                                </telerik:RadPane>
+                                
+
+                            </telerik:RadPaneGroup>
+                            
+                        </telerik:RadSplitContainer>
+                    <telerik:RadSplitContainer   x:Name="BottomContainer"  InitialPosition="DockedTop" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <telerik:RadPaneGroup x:Name="Group4">
+
+                            <telerik:RadPane x:Name="Pane7" Header="File Page Details">
+                                <telerik:RadGridView  HorizontalAlignment="Stretch"  Margin="10"   x:Name="RdGrdFilePageDetails">
+
+                                </telerik:RadGridView>
+                            </telerik:RadPane>
+
+                        </telerik:RadPaneGroup>
+
+                    </telerik:RadSplitContainer>
+                </telerik:RadDocking>-->
+               
             </Grid>
         </Border>
         <Border Grid.Column="1" BorderThickness="1" BorderBrush="BurlyWood" Margin="5">
@@ -98,8 +171,8 @@
                                  HasOpenButton="True" HorizontalAlignment="Center" />
                 <!--<telerik:SignaturePanel x:Name="signaturePanel" PdfViewer="{Binding ElementName=pdfViewer, Mode=OneWay}" Grid.Row="1"/> SignaturePanel="{Binding ElementName=signaturePanel, Mode=OneTime}"-->
                 <Grid Grid.Row="2">
-               
-                   
+
+
                     <telerik:RadPdfViewer x:Name="pdfViewer" 
                                           DataContext="{Binding CommandDescriptors, ElementName=pdfViewer}" 
                                           telerik:RadPdfViewerAttachedComponents.RegisterSignSignatureDialog="True" 

@@ -6,4 +6,29 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="PDF\Create\" />
+    <Folder Include="Shared\Classes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="itext7" Version="8.0.1" />
+    <PackageReference Include="Telerik.UI.for.Wpf.70.Xaml" Version="2023.1.117" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="A3DWPFUtility">
+      <HintPath>..\..\A3DWPFUtility\bin\Debug\net7.0-windows\A3DWPFUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WPF R1 2023\Binaries\WPF70\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WPF R1 2023\Binaries\WPF70\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik UI for WPF R1 2023\Binaries\WPF70\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

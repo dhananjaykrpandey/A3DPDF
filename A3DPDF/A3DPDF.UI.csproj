@@ -94,5 +94,9 @@
   <ItemGroup>
     <Folder Include="Shared\Classes\" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\A3DPDF.Core\A3DPDF.Core.csproj" />
+  </ItemGroup>
 
 </Project>
